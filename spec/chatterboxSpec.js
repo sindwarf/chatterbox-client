@@ -37,6 +37,7 @@ describe('chatterbox', function() {
       });
 
       it('should send the correct message along with the request', function(done) {
+        //debugger;
         var message = {
           username: 'Mel Brooks',
           text: 'It\'s good to be the king',
@@ -46,6 +47,7 @@ describe('chatterbox', function() {
         Parse.create(message);
         ajaxOptions = typeof $.ajax.args[0][0] === 'object' ? $.ajax.args[0][0] : $.ajax.args[0][1];
         var sentMessage = JSON.parse(ajaxOptions.data);
+        //debugger;
         expect(sentMessage).to.deep.equal(message);
         done();
       });
@@ -92,7 +94,9 @@ describe('chatterbox', function() {
         text: 'I didn\'t get a harumph outa that guy.!',
         roomname: 'lobby'
       });
+      //debugger;
       $('#chats').find('.username').trigger('click');
+
       expect(Friends.toggleStatus.called).to.be.true;
 
       Friends.toggleStatus.restore();

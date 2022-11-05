@@ -5,9 +5,20 @@
 var Messages = {
 
   // TODO: Define how you want to store your messages.
-  _data: null,
+  _data: [],
 
   // TODO: Define methods which allow you to retrieve from,
   // add to, and generally interact with the messages.
+  add(messageObj) {
+    _data.push(messageObj);
+  },
+
+  getData() {
+
+  }
 
 };
+
+/*
+{message_id: 77347, roomname: 'auditions', text: 'hey there!', username: 'uncle-jay', github_handle: 'jyuen', …}
+*/

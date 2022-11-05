@@ -17,6 +17,20 @@ var RoomsView = {
 
   renderRoom: function(roomname) {
     // TODO: Render out a single room.
+    //i : string defining room name
+    $room = $('#' + roomname );
+    this.$select.append(new Option(roomname, $room));
+
+    //$("#selectList").append(new Option("option text", "value"));
+
+    /**
+     $.each(items, function (i, item) {
+    $('#mySelect').append($('<option>', {
+        value: item.value,
+        text : item.text
+    }));
+});
+     */
   },
 
   handleChange: function(event) {
