@@ -18,12 +18,20 @@ var MessagesView = {
     // TODO: Render a single message.
     //i : messageObj
     //o : need to add to #chats
+    // html = html.replace(/</g, "&lt;").replace(/>/g, "&gt;");
     let message = MessageView.render(messageObj);
+    let $message = $(message);
+
+    $message.on('click', '.username', function(event) {
+      //console.log('inside the onclick');
+      MessagesView.handleClick(event);
+    });
+
     // console.log('message: ' + message);
     // let $message = $(message);
     // console.log('this is the username: ' + $message.find('username'));
     // this.handleClick($message.find('username').onclick);
-    this.$chats.append(message);
+    this.$chats.append($message);
 
     //console.log($('#chats').length);
   },
@@ -45,7 +53,9 @@ var MessagesView = {
     //this funciton adds username to friendslist
 
 
-    console.log('this is the event: ' + event);
+    //console.log('this is the event: ' + JSON.stringify(event));
+    //console.log('the username is: ', event.target.innerText);
+    Friends.toggleStatus(event.target.innerText);
     //let text = event.target.text();
     //console.log(text);
 

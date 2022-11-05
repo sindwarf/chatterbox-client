@@ -14,7 +14,7 @@ var Friends = {
 
   toggleStatus(userName) {
     if (this._data.has(userName)) {
-      this._data.remove(userName);
+      this._data.delete(userName);
     } else {
       this._data.add(userName);
     }

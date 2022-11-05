@@ -1,0 +1,10 @@
+TODO:
+Update room data with server data
+render room data to select
+Figure out how to create room
+  create popup that requsts room name
+Handle room change
+Update messages data wiht server data
+Render room data to feed
+Filter messages by selected room
+Friends should have messages in bold or highlight

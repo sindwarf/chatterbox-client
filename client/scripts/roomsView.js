@@ -9,28 +9,24 @@ var RoomsView = {
   initialize: function() {
     // TODO: Perform any work which needs to be done
     // when this view loads.
+    this.$button.on('click', function(event) {
+      console.log('inside the room button');
+      RoomsView.handleClick(event);
+    });
   },
 
   render: function() {
     // TODO: Render out the list of rooms.
+
   },
 
-  renderRoom: function(roomname) {
+  renderRoom: function(roomName) {
     // TODO: Render out a single room.
     //i : string defining room name
-    $room = $('#' + roomname );
-    this.$select.append(new Option(roomname, $room));
+    $room = $('#' + roomName );
+    this.$select.append(new Option(roomName, $room));
 
     //$("#selectList").append(new Option("option text", "value"));
-
-    /**
-     $.each(items, function (i, item) {
-    $('#mySelect').append($('<option>', {
-        value: item.value,
-        text : item.text
-    }));
-});
-     */
   },
 
   handleChange: function(event) {
@@ -39,6 +35,8 @@ var RoomsView = {
 
   handleClick: function(event) {
     // TODO: Handle the user clicking the "Add Room" button.
+    // console.log('the event is', event);
+    // console.log('the event target is', event.target);
+    Rooms.add('lobby');
   }
-
 };
