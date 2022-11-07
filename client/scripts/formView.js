@@ -24,10 +24,16 @@ var FormView = {
     messageObj.text = $('#message').val();
     messageObj.username = App.username;
     messageObj.roomname = Rooms.currentRoom;
-    Parse.create(messageObj);
+    if (messageObj.text === '') {
+      MessagesView.render();
+    } else {
+      Parse.create(messageObj);
+      Messages.add(messageObj);
+    }
     // TODO: Currently, this is all handleSubmit does.
     // Make this function actually send a message to the Parse API.
-    console.log('this is the event', event);
+    //console.log('this is the event', event);
+
     // console.log('this is the form ', $('#message').val());
     // console.log('click!');
   },
